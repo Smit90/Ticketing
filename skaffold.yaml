@@ -1,0 +1,17 @@
+apiVersion: skaffold/v4beta2
+kind: Config
+metadata:
+  name: ticketing
+build:
+  artifacts:
+    - image: kk032/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "src/**/*.ts"
+manifests:
+  rawYaml:
+    - infra/k8s/*
