@@ -2,7 +2,7 @@ import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
 import cookieSession from "cookie-session";
-import { createTicketRouter } from './routes'
+import { createTicketRouter, showTicketRouter } from './routes'
 import { errorHandler, NotFoundError, currentUser } from "@kk-dev/common";
 
 const app = express();
@@ -21,6 +21,7 @@ app.use(currentUser)
 
 // routes
 app.use(createTicketRouter)
+app.use(showTicketRouter)
 
 app.all("*", async () => {
     throw new NotFoundError();
