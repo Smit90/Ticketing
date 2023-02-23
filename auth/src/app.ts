@@ -8,8 +8,7 @@ import {
     signoutRouter,
     singupRouter,
 } from "./routes/index";
-import { errorHandler } from "./middlewares/index";
-import { NotFoundError } from "./errors/index";
+import { errorHandler, NotFoundError } from "@kk-dev/common";
 
 const app = express();
 

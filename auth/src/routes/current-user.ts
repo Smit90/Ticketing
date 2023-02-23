@@ -1,5 +1,5 @@
 import express from "express";
-import { currentUser, requireAuth } from "../middlewares";
+import { currentUser, requireAuth } from "@kk-dev/common";
 
 const router = express.Router();
 
