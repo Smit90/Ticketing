@@ -12,6 +12,14 @@ build:
         manual:
           - dest: .
             src: "src/**/*.ts"
+    - image: kk032/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "src/**/*.ts"
     - image: kk032/client
       context: client
       docker:
